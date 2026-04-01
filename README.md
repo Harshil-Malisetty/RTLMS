@@ -82,7 +82,7 @@ docker exec rtlms-cassandra cqlsh -e "DESCRIBE KEYSPACES"
 #     When it prints a list of keyspaces (even if empty), Cassandra is ready.
 
 # 1c. Load the database schema
-docker exec -i rtlms-cassandra cqlsh < backend/scripts/schema.cql
+Get-Content backend/scripts/schema.cql | docker exec -i rtlms-cassandra cqlsh
 
 # 1d. Install backend dependencies and seed the database
 cd backend
